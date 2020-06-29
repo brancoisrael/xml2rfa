@@ -1,0 +1,19 @@
+{{begin}}
+{{winsecid CALL}}
+{{contact Administrador RightFax}}
+{{company Clinica de Repouso Geriátrica}}
+{{fax (021)2503-0490}}
+{{voice (21) 2503-2188}}
+{{attach \\ws-fs01.dsv.bradseg.com.br\FAX\OUT\SIAI00000000213.pdf}}
+{{billing 33333}}
+{{billing2 444}}
+{{unique_id SIAI00000000213}}
+{{comment Ao enviar um fax essas informações não são transmitidas, confirma?}}
+{{cover bradseg.pcl}}
+{{covertext}}
+Este texto com no máximo 69 caracteres, em até 21 linha, vai aparecer
+na folha de rosto deste fax, e todos podem ler.
+É necessário um comando que encerra esta TAG.
+{{endcovertext}}
+{{notifyhost success.inc failure.inc 1}}
+{{end}}

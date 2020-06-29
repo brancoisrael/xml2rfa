@@ -1,0 +1,14 @@
+{{begin}}
+{{winsecid CALL}}
+{{contact Sérgio Augusto Ferreira}}
+{{company Telemikro}}
+{{fax (021) 2503-9998}}
+{{voice (21) 2503-1344}}
+{{unique_id SIAI00000000215}}
+{{attach \\ws-fs01.dsv.bradseg.com.br\FAX\OUT\SIAI00000000215.pdf}}
+{{billing 7777}}
+{{billing2 88888888}}
+{{comment Teste de envio de fax com falha. Este fax não será transmitido!}}
+{{cover none}}
+{{notifyhost success.inc failure.inc 1}}
+{{end}}

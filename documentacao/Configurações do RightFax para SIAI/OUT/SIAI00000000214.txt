@@ -1,0 +1,21 @@
+{{begin}}
+{{winsecid CALL}}
+{{contact Sérgio Augusto Ferreira}}
+{{company Telemikro}}
+{{fax (061) 2196-8052}}
+{{voice (21) 6718-0299}}
+{{attach \\ws-fs01.dsv.bradseg.com.br\FAX\OUT\SIAI00000000214.pdf}}
+{{billing 55555}}
+{{billing2 666666}}
+{{unique_id SIAI00000000214}}
+{{comment Teste de envio de fax para Brasília com DDD}}
+{{cover bradseg.pcl}}
+{{covertext}}
+Teste de envio de fax. Por favor, desconsiderar esse fax.
+---------------------------------------------------------
+Este texto com no máximo 69 caracteres, em até 21 linha, vai aparecer
+na folha de rosto deste fax, e todos podem ler.
+É necessário um comando que encerra esta TAG.
+{{endcovertext}}
+{{notifyhost success.inc failure.inc 1}}
+{{end}}

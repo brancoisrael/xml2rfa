@@ -1,0 +1,18 @@
+{{begin}}
+{{winsecid CALL}}
+{{contact Paulo Fernando de Araújo}}
+{{company Hospital Geral de Bonsucesso}}
+{{fax (021)2503-0490}}
+{{voice (21) 2503-1344}}
+{{attach \\ws-fs01.dsv.bradseg.com.br\FAX\OUT\SIAI00000000212.pdf}}
+{{billing 11111}}
+{{billing2 2222222222}}
+{{unique_id SIAI00000000212}}
+{{comment Ao enviar um fax essas informações não são transmitidas}}
+{{cover bradseg.pcl}}
+{{covertext}}
+Este texto com no máximo 69 caracteres, em até 21 linha, vai aparecer
+na folha de rosto deste fax, e todos podem ler.
+{{endcovertext}}
+{{notifyhost success.inc failure.inc 1}}
+{{end}}
