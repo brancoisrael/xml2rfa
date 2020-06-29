@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace xml2rfax.br.com.ibm.util
@@ -15,7 +16,7 @@ namespace xml2rfax.br.com.ibm.util
         private PropertiesUtil() {
            map = new Dictionary<string, string>();
 
-            string[] lines = System.IO.File.ReadAllLines(path: Constantes.INIT_PROPERTIES);
+            string[] lines = System.IO.File.ReadAllLines(path: Environment.GetEnvironmentVariable("XML2RFAX_INIT"));
 
             foreach (string line in lines)
             {
@@ -33,7 +34,7 @@ namespace xml2rfax.br.com.ibm.util
                 }                
             }
             catch (Exception e) {
-                Logger.LOGGER("Erro: "+e.Message);
+                Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "Erro: "+e.Message);
                 throw new NullReferenceException();
             }
 
@@ -44,7 +45,7 @@ namespace xml2rfax.br.com.ibm.util
         { 
             if (!map.TryGetValue(key, out String value))
             {
-                Logger.LOGGER("Erro: Valor não encontrado para a propriedade de configuração {0}.".Replace("{0}",key));
+                Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "Erro: Valor não encontrado para a propriedade de configuração {0}.".Replace("{0}",key));
             }
 
             return value;

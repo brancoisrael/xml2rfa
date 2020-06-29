@@ -9,13 +9,13 @@ namespace xml2rfax.br.com.ibm.util
     public class Logger
     {
 
-        public static void LOGGER(String message) {
+        public static void LOGGER(String classe, String message) {
 
             DateTime now = DateTime.Now;
 
             StringBuilder fileName = new StringBuilder();
             fileName.Append(now.Year).Append(now.Month).Append(now.Day);
-            string file = Constantes.LOG.Replace("{0}", fileName.ToString());
+            string file = Environment.GetEnvironmentVariable("XML2RFAX_LOG").Replace("{0}", fileName.ToString());// Constantes.LOG.Replace("{ 0}", fileName.ToString());
 
             try
             {
@@ -28,7 +28,8 @@ namespace xml2rfax.br.com.ibm.util
                 {
                     StringBuilder log = new StringBuilder();
                     log.Append(now.ToLongTimeString());
-                    log.Append(" ").Append(message);
+                    log.Append(" ").Append(classe);
+                    log.Append(" - ").Append(message);
                     txtWriter.WriteLine(log.ToString());
                 }               
             }

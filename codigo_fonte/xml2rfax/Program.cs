@@ -22,7 +22,7 @@ namespace xml2rfax
             };
             ServiceBase.Run(ServicesToRun);
             */
-            PropertiesUtil.getInstance().getProperties("rf_host");
+            PropertiesUtil.getInstance().getProperties("rf_host2");
         }
     }
 }
