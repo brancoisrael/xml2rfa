@@ -1,8 +1,10 @@
-﻿using System;
+﻿using RFCOMAPILib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using xml2rfax.br.com.ibm.service;
 using xml2rfax.br.com.ibm.util;
 
 namespace xml2rfax
@@ -22,7 +24,8 @@ namespace xml2rfax
             };
             ServiceBase.Run(ServicesToRun);
             */
-            PropertiesUtil.getInstance().getProperties("rf_host2");
+            FaxService faxService = new FaxService();
+            faxService.listUserFax();
         }
     }
 }
