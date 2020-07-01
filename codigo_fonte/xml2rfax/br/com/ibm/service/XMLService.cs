@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
@@ -21,8 +22,11 @@ namespace xml2rfax.br.com.ibm.service
             arquivo.Append(nomeArquivo);
             arquivo.Append(".xml");
 
-            if (!File.Exists(arquivo.ToString()))
+            if (!File.Exists(arquivo.ToString())) 
+            {
+                Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "Arquivo {0}.xml não encontrado.".Replace("{0}", nomeArquivo));
                 return null;
+            }               
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof (DadosFaxDTO));
 
