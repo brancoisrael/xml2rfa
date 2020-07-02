@@ -76,6 +76,7 @@
     <Compile Include="br\com\ibm\util\Constantes.cs" />
     <Compile Include="br\com\ibm\util\Logger.cs" />
     <Compile Include="br\com\ibm\util\PropertiesUtil.cs" />
+    <Compile Include="br\com\ibm\util\StringUtils.cs" />
     <Compile Include="Service1.cs">
       <SubType>Component</SubType>
     </Compile>

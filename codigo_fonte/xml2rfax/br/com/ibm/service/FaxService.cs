@@ -1,10 +1,7 @@
 ﻿using RFCOMAPILib;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using xml2rfax.br.com.ibm.dto;
 using xml2rfax.br.com.ibm.util;
 
@@ -13,10 +10,12 @@ namespace xml2rfax.br.com.ibm.service
     public class FaxService
     {         
        private UserService userService;
+        private XMLService xmlService;
 
         public FaxService()
         {
-            userService = new UserService();
+            userService = new UserService(); 
+            xmlService = new XMLService();
         }
 
         public void moveFaxes() 
@@ -24,23 +23,31 @@ namespace xml2rfax.br.com.ibm.service
            
             IList<Fax> listaFax = listarFaxesAsc();
 
-            if (listaFax != null)
+            if (listaFax != null && listaFax.Count>0)
             {
-                XMLService xmlService = new XMLService();
-
-                foreach (Fax fax in listaFax.Reverse())
+                foreach (Fax fax in listaFax)
                 {
-                    DadosFaxDTO dadosFaxDTO = xmlService.lerArquivo(fax.FromFaxNumber);
+                    Console.WriteLine(fax.FaxRecordDateTime);
+                    String toFaxNumber = String.IsNullOrEmpty(fax.ToFaxNumber) ? fax.ToEmailAddress : fax.ToFaxNumber;
 
-                    if (dadosFaxDTO != null)
+                    if (!String.IsNullOrEmpty(toFaxNumber))
                     {
-                        if (!dadosFaxDTO.validateFile())
-                        {
-                            Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "Arquivo {0}.xml com problemas em sua estrutura.".Replace("{0}", fax.FromFaxNumber));
-                            continue;
-                        }
+                        DadosFaxDTO dadosFaxDTO = xmlService.mapperXMLtoObject(toFaxNumber);
 
-                        routToUser(fax, dadosFaxDTO);
+                        if (dadosFaxDTO != null)
+                        {
+                            if (!dadosFaxDTO.validateFile())
+                            {
+                                Logger.LOGGER_INF("Arquivo {0}.xml com problemas em sua estrutura.".Replace("{0}", fax.FromFaxNumber));
+                                continue;
+                            }
+
+                            routToUser(fax, dadosFaxDTO);
+                        }
+                    }
+                    else
+                    {
+                        Logger.LOGGER_INF("Fax com UniqueID {0} não possui routing code.".Replace("{0}", fax.UniqueID));
                     }
                 }
             }    
@@ -72,20 +79,25 @@ namespace xml2rfax.br.com.ibm.service
 
         private void routToUser(Fax fax, DadosFaxDTO dadosFaxDTO) 
         {
-            fax.BillingCode1 = dadosFaxDTO.Billinfo1;
-            fax.BillingCode2 = dadosFaxDTO.Billinfo2;
-            fax.FromName = dadosFaxDTO.Comments;
-            fax.UserComments = dadosFaxDTO.FromName;
+            User user = userService.findUser(dadosFaxDTO.RoutingCode);
 
-            fax.ToName = dadosFaxDTO.RoutingCode;
-            fax.ToFaxNumber = "990000";
+            if (user != null)
+            {
+                fax.BillingCode1 = dadosFaxDTO.Billinfo1;
+                fax.BillingCode2 = dadosFaxDTO.Billinfo2;
+                fax.FromName = dadosFaxDTO.Comments;
+                fax.UserComments = dadosFaxDTO.FromName;
+                fax.ToName = dadosFaxDTO.RoutingCode;
+                fax.ToFaxNumber = "990000";
 
-            fax.Save(BoolType.True);
-
-            User user = userService.findUser(fax.ToName);
-            
-            if(user != null)
-                fax.RouteToUser(userService.findUser(fax.ToName),"XML2URAFAX");
+                fax.Save(BoolType.True);
+                fax.RouteToUser(user, "XML2URAFAX");
+                xmlService.moveXMLProcessed(StringUtils.pathXMLSouce(dadosFaxDTO.codigoFax));
+            }
+            else
+            {
+                Logger.LOGGER_INF("Usuário com routing code {0} não encontrado.".Replace("{0}", dadosFaxDTO.RoutingCode));
+            }
         }
 
     }

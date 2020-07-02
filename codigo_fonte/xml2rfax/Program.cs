@@ -16,16 +16,24 @@ namespace xml2rfax
         /// </summary>
         static void Main()
         {
-            /*
+            
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
                 new Service1()
             };
             ServiceBase.Run(ServicesToRun);
-            */
+            
+
+            /*
             FaxService faxService = new FaxService();
-            faxService.listUserFax();
+            faxService.moveFaxes();
+            */
+
+
+            /*XMLService xMLService = new XMLService();
+            xMLService.moveXMLDiscarded();*/
+
         }
     }
 }

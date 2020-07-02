@@ -34,7 +34,7 @@ namespace xml2rfax.br.com.ibm.util
                 }                
             }
             catch (Exception e) {
-                Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "Erro: "+e.Message);
+                Logger.LOGGER_ERROR(e.Message);
                 throw new NullReferenceException();
             }
 
@@ -45,7 +45,7 @@ namespace xml2rfax.br.com.ibm.util
         { 
             if (!map.TryGetValue(key, out String value))
             {
-                Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "Erro: Valor não encontrado para a propriedade de configuração {0}.".Replace("{0}",key));
+                Logger.LOGGER_ERROR("Valor não encontrado para a propriedade de configuração {0}.".Replace("{0}",key));
             }
 
             return value;
