@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xml2rfax", "xml2rfax.csproj", "{89399E62-1D22-4893-9982-DE93BC2FDF04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xml2rfax", "xml2rfax.csproj", "{34C33856-65AF-47B1-B66D-9DF959B81427}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{89399E62-1D22-4893-9982-DE93BC2FDF04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89399E62-1D22-4893-9982-DE93BC2FDF04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89399E62-1D22-4893-9982-DE93BC2FDF04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89399E62-1D22-4893-9982-DE93BC2FDF04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34C33856-65AF-47B1-B66D-9DF959B81427}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{34C33856-65AF-47B1-B66D-9DF959B81427}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{34C33856-65AF-47B1-B66D-9DF959B81427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34C33856-65AF-47B1-B66D-9DF959B81427}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {05DD9BD5-2C36-42C2-993E-CE076AB84904}
+		SolutionGuid = {BC3C2370-3574-44DA-8A4A-BDBDC4FBF95B}
 	EndGlobalSection
 EndGlobal

@@ -52,6 +52,7 @@ namespace xml2rfax.br.com.ibm.service
                 catch (IOException e)
                 {
                     Logger.LOGGER_ERROR("Erro ao tentar mover arquivo {0} para o diretório XML_Processados.".Replace("{0}",sourceFile));
+                    Logger.LOGGER_ERROR(e.Message);
                 }
             }
             else
@@ -76,6 +77,7 @@ namespace xml2rfax.br.com.ibm.service
             catch(Exception e)
             {
                 Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "ERROR: Propriedade xml_move_age não configurada com valor numérico.");
+                Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, e.Message);
             }
 
             if(Directory.Exists(PropertiesUtil.getInstance().getProperties("dir_xml_descartado")))
@@ -99,6 +101,7 @@ namespace xml2rfax.br.com.ibm.service
                         catch (IOException e)
                         {
                             Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "ERROR: Erro ao tentar mover arquivo {0} para o diretório XML_Descartados.".Replace("{0}", fileSource));
+                            Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, e.Message);
                         }
                     }
                 }

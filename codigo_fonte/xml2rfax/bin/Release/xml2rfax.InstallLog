@@ -1,0 +1,140 @@
+﻿Instalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Instalando o serviço Service1...
+Serviço Service1 foi instalado com êxito.
+Criando a origem de EventLog Service1 no log Application...
+Confirmando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Desinstalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Removendo a origem do EventLog Service1.
+Serviço Service1 está sendo removido do sistema...
+Serviço Service1 foi removido com êxito do sistema.
+Instalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Instalando o serviço Service1...
+Serviço Service1 foi instalado com êxito.
+Criando a origem de EventLog Service1 no log Application...
+Confirmando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Desinstalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Removendo a origem do EventLog Service1.
+Serviço Service1 está sendo removido do sistema...
+Serviço Service1 foi removido com êxito do sistema.
+Desinstalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Removendo a origem do EventLog Service1.
+Aviso: a origem Service1 não está registrada no computador local.
+Serviço Service1 está sendo removido do sistema...
+Serviço Service1 foi removido com êxito do sistema.
+Instalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Instalando o serviço Service1...
+Criando a origem de EventLog Service1 no log Application...
+Revertendo o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Restaurando o log de eventos para o estado anterior da origem Service1.
+Instalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Instalando o serviço Service2...
+Serviço Service2 foi instalado com êxito.
+Criando a origem de EventLog Service2 no log Application...
+Confirmando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Desinstalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Removendo a origem do EventLog Service2.
+Serviço Service2 está sendo removido do sistema...
+Serviço Service2 foi removido com êxito do sistema.
+Instalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Instalando o serviço Service3...
+Serviço Service3 foi instalado com êxito.
+Criando a origem de EventLog Service3 no log Application...
+Confirmando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Desinstalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Removendo a origem do EventLog Service3.
+Serviço Service3 está sendo removido do sistema...
+Serviço Service3 foi removido com êxito do sistema.
+Instalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Instalando o serviço Service3...
+Serviço Service3 foi instalado com êxito.
+Criando a origem de EventLog Service3 no log Application...
+Confirmando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Instalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Instalando o serviço Service3...
+Criando a origem de EventLog Service3 no log Application...
+Revertendo o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Restaurando o log de eventos para o estado anterior da origem Service3.
+Desinstalando o assembly 'C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe'.
+Parâmetros afetados são:
+   logtoconsole = 
+   logfile = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.InstallLog
+   assemblypath = C:\xml2rfax\xml2rfax\bin\Release\xml2rfax.exe
+Removendo a origem do EventLog Service3.
+Serviço Service3 está sendo removido do sistema...
+Serviço Service3 foi removido com êxito do sistema.

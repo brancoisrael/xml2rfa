@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
+using xml2rfax.br.com.ibm.service;
 
 namespace xml2rfax
 {
@@ -18,6 +20,7 @@ namespace xml2rfax
 
         protected override void OnStart(string[] args)
         {
+          
         }
 
         protected override void OnStop()

@@ -1,11 +1,10 @@
-﻿using RFCOMAPILib;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using xml2rfax.br.com.ibm.service;
-using xml2rfax.br.com.ibm.util;
 
 namespace xml2rfax
 {
@@ -24,16 +23,15 @@ namespace xml2rfax
             };
             ServiceBase.Run(ServicesToRun);
             
-
             /*
-            FaxService faxService = new FaxService();
-            faxService.moveFaxes();
+            while (true)
+            {
+                FaxService faxService = new FaxService();
+                faxService.moveFaxes();
+
+                Thread.Sleep(10000);
+            }
             */
-
-
-            /*XMLService xMLService = new XMLService();
-            xMLService.moveXMLDiscarded();*/
-
         }
     }
 }
