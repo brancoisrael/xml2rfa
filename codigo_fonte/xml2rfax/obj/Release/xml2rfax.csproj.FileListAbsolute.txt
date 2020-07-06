@@ -21,3 +21,9 @@ D:\projetos\xml2rfa\codigo_fonte\xml2rfax\obj\Release\xml2rfax.csproj.GenerateRe
 D:\projetos\xml2rfa\codigo_fonte\xml2rfax\obj\Release\xml2rfax.csproj.CoreCompileInputs.cache
 D:\projetos\xml2rfa\codigo_fonte\xml2rfax\obj\Release\xml2rfax.exe
 D:\projetos\xml2rfa\codigo_fonte\xml2rfax\obj\Release\xml2rfax.pdb
+D:\projetos\xml2rfa\codigo_fonte\xml2rfax\bin\Release\Quartz.dll
+D:\projetos\xml2rfa\codigo_fonte\xml2rfax\bin\Release\Common.Logging.Core.dll
+D:\projetos\xml2rfa\codigo_fonte\xml2rfax\bin\Release\Common.Logging.dll
+D:\projetos\xml2rfa\codigo_fonte\xml2rfax\bin\Release\Quartz.pdb
+D:\projetos\xml2rfa\codigo_fonte\xml2rfax\bin\Release\Quartz.xml
+D:\projetos\xml2rfa\codigo_fonte\xml2rfax\obj\Release\xml2rfax.csproj.CopyComplete

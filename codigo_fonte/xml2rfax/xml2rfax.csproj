@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Quartz">
+      <HintPath>..\..\..\..\downloads\Quartz.NET-2.6.2\bin\4.0\release\Quartz\Quartz.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -62,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="br\com\ibm\dto\DadosFaxDTO.cs" />
+    <Compile Include="br\com\ibm\job\FaxJob.cs" />
+    <Compile Include="br\com\ibm\job\JobFactory.cs" />
+    <Compile Include="br\com\ibm\job\XMLJob.cs" />
     <Compile Include="br\com\ibm\service\FaxServerService.cs" />
     <Compile Include="br\com\ibm\service\FaxService.cs" />
     <Compile Include="br\com\ibm\service\UserService.cs" />
