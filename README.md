@@ -1,3 +1,9 @@
-# xml2rfa
+# XML2RFAX
 
-ricardo.caldas@ativu.com.br
+Ambiente:
+
+* .Net 4.0
+* x86
+* Quartz 2.x
+
+brancoisrael@gmail.com
