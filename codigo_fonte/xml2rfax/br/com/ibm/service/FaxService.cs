@@ -1,6 +1,7 @@
 ﻿using RFCOMAPILib;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using xml2rfax.br.com.ibm.dto;
 using xml2rfax.br.com.ibm.util;
@@ -8,26 +9,24 @@ using xml2rfax.br.com.ibm.util;
 namespace xml2rfax.br.com.ibm.service
 {
     public class FaxService
-    {         
-       private UserService userService;
+    {
+        private UserService userService;
         private XMLService xmlService;
 
         public FaxService()
         {
-            userService = new UserService(); 
+            userService = new UserService();
             xmlService = new XMLService();
         }
 
-        public void moveFaxes() 
+        public void moveFaxes()
         {
-           
             IList<Fax> listaFax = listarFaxesAsc();
 
-            if (listaFax != null && listaFax.Count>0)
+            if (listaFax != null && listaFax.Count > 0)
             {
                 foreach (Fax fax in listaFax)
                 {
-                    Console.WriteLine(fax.FaxRecordDateTime);
                     String toFaxNumber = String.IsNullOrEmpty(fax.ToFaxNumber) ? fax.ToEmailAddress : fax.ToFaxNumber;
 
                     if (!String.IsNullOrEmpty(toFaxNumber))
@@ -50,12 +49,11 @@ namespace xml2rfax.br.com.ibm.service
                         Logger.LOGGER_INF("Fax com UniqueID {0} não possui routing code.".Replace("{0}", fax.UniqueID));
                     }
                 }
-            }    
-            
+            }
         }
 
         private IList<Fax> listarFaxesAsc()
-        {           
+        {
             User user = userService.OrigemFaxBox;
 
 
@@ -64,7 +62,7 @@ namespace xml2rfax.br.com.ibm.service
                 Faxes faxes = user.Faxes;
 
                 SortedList<DateTime, Fax> listaFax = new SortedList<DateTime, Fax>();
-               
+
                 foreach (Fax fax in faxes)
                 {
                     if (fax.IsReceived == BoolType.True && fax.FaxStatus == FaxStatusType.fsDoneOK)
@@ -77,28 +75,35 @@ namespace xml2rfax.br.com.ibm.service
         }
 
 
-        private void routToUser(Fax fax, DadosFaxDTO dadosFaxDTO) 
+        private void routToUser(Fax fax, DadosFaxDTO dadosFaxDTO)
         {
-            User user = userService.findUser(dadosFaxDTO.RoutingCode);
-
-            if (user != null)
+            if (Directory.Exists(PropertiesUtil.getInstance().getProperties("dir_xml_processados")))
             {
-                fax.BillingCode1 = dadosFaxDTO.Billinfo1;
-                fax.BillingCode2 = dadosFaxDTO.Billinfo2;
-                fax.FromName = dadosFaxDTO.Comments;
-                fax.UserComments = dadosFaxDTO.FromName;
-                fax.ToName = dadosFaxDTO.RoutingCode;
-                fax.ToFaxNumber = "990000";
+                User user = userService.findUser(dadosFaxDTO.RoutingCode);
 
-                fax.Save(BoolType.True);
-                fax.RouteToUser(user, "XML2URAFAX");
-                xmlService.moveXMLProcessed(StringUtils.pathXMLSouce(dadosFaxDTO.codigoFax));
+                if (user != null)
+                {
+                    fax.BillingCode1 = dadosFaxDTO.Billinfo1;
+                    fax.BillingCode2 = dadosFaxDTO.Billinfo2;
+                    fax.FromName = dadosFaxDTO.Comments;
+                    fax.UserComments = dadosFaxDTO.FromName;
+                    fax.ToName = dadosFaxDTO.RoutingCode;
+                    fax.ToFaxNumber = "990000";
+
+                    fax.Save(BoolType.True);
+                    fax.RouteToUser(user, "XML2URAFAX");
+                    xmlService.moveXMLProcessed(StringUtils.pathXMLSouce(dadosFaxDTO.codigoFax));
+                }
+                else
+                {
+                    Logger.LOGGER_INF("Usuário com routing code {0} não encontrado.".Replace("{0}", dadosFaxDTO.RoutingCode));
+                }
             }
             else
             {
-                Logger.LOGGER_INF("Usuário com routing code {0} não encontrado.".Replace("{0}", dadosFaxDTO.RoutingCode));
+                Logger.LOGGER_ERROR("Não é possível mover arquivos XML, propriedade dir_xml_processados não configurado.");
             }
-        }
 
+        }
     }
 }

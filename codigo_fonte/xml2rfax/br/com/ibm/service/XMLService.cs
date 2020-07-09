@@ -35,31 +35,26 @@ namespace xml2rfax.br.com.ibm.service
             return dadosFaxDTO;
         }
 
-        public void moveXMLProcessed(String sourceFile) 
+        public void moveXMLProcessed(String sourceFile)
         {
             Console.WriteLine(PropertiesUtil.getInstance().getProperties("dir_xml_processados"));
             Console.WriteLine(Path.GetFileName(sourceFile));
             Console.WriteLine(Path.Combine(PropertiesUtil.getInstance().getProperties("dir_xml_processados"), System.IO.Path.GetFileName(sourceFile)));
 
-            if (Directory.Exists(PropertiesUtil.getInstance().getProperties("dir_xml_processados")))
+            try
             {
-                try
-                {
-                    String destFile = Path.Combine(PropertiesUtil.getInstance().getProperties("dir_xml_processados"), System.IO.Path.GetFileName(sourceFile));
-                    File.Delete(destFile);
-                    File.Move(sourceFile, destFile);
-                }
-                catch (IOException e)
-                {
-                    Logger.LOGGER_ERROR("Erro ao tentar mover arquivo {0} para o diretório XML_Processados.".Replace("{0}",sourceFile));
-                    Logger.LOGGER_ERROR(e.Message);
-                }
+                String destFile = Path.Combine(PropertiesUtil.getInstance().getProperties("dir_xml_processados"), System.IO.Path.GetFileName(sourceFile));
+                File.Delete(destFile);
+                File.Move(sourceFile, destFile);
             }
-            else
+            catch (IOException e)
             {
-                Logger.LOGGER_ERROR("Não é possível mover arquivos XML, propriedade dir_xml_processados não configurado.");
+                Logger.LOGGER_ERROR("Erro ao tentar mover arquivo {0} para o diretório XML_Processados.".Replace("{0}", sourceFile));
+                Logger.LOGGER_ERROR(e.Message);
             }
         }
+           
+        
 
         public void moveXMLDiscarded()
         {
@@ -76,8 +71,8 @@ namespace xml2rfax.br.com.ibm.service
             }
             catch(Exception e)
             {
-                Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "ERROR: Propriedade xml_move_age não configurada com valor numérico.");
-                Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, e.Message);
+                Logger.LOGGER_ERROR("Propriedade xml_move_age não configurada com valor numérico.");
+                Logger.LOGGER_ERROR(e.Message);
             }
 
             if(Directory.Exists(PropertiesUtil.getInstance().getProperties("dir_xml_descartado")))
@@ -100,15 +95,15 @@ namespace xml2rfax.br.com.ibm.service
                         }
                         catch (IOException e)
                         {
-                            Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "ERROR: Erro ao tentar mover arquivo {0} para o diretório XML_Descartados.".Replace("{0}", fileSource));
-                            Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, e.Message);
+                            Logger.LOGGER_ERROR("Erro ao tentar mover arquivo {0} para o diretório XML_Descartados.".Replace("{0}", fileSource));
+                            Logger.LOGGER_ERROR(e.Message);
                         }
                     }
                 }
             }
             else
             {
-                Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "ERROR: Não é possível mover arquivos XML, propriedade dir_xml_analisar não configurado.");
+                Logger.LOGGER_ERROR("Não é possível mover arquivos XML, propriedade dir_xml_analisar não está configurada corretamente.");
             }           
         }
     }

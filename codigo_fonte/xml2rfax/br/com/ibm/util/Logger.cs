@@ -18,7 +18,7 @@ namespace xml2rfax.br.com.ibm.util
 
             StringBuilder fileName = new StringBuilder();
             fileName.Append(now.Year).Append(now.Month).Append(now.Day);
-            string file = Environment.GetEnvironmentVariable("XML2RFAX_LOG").Replace("{0}", fileName.ToString());
+            string file = PropertiesUtil.getInstance().getProperties("xml2rfax_log").Replace("{0}", fileName.ToString());
 
             try
             {
@@ -44,44 +44,38 @@ namespace xml2rfax.br.com.ibm.util
 
         public static void LOGGER_ERROR(String message)
         {
-
+            
             try
-            {
+            {               
                 if (!EventLog.SourceExists("XML2RFAX"))
                 {
-                    EventLog.CreateEventSource("MySource", "MyNewLog");
+                    EventLog.CreateEventSource("XML2RFAX", "XML2RFAX");
                 }
-
-                /*
-                EventLog myLog = new EventLog();
-                myLog.Source = "MySource";
-                myLog.WriteEntry("Writing to event log.");
-                */
-
 
                 EventLog.WriteEntry("XML2RFAX", message, EventLogEntryType.Error);
             }
             catch(SecurityException e)
             {
                 Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "Erro ao tentar gravar evento {0} no event viewer, mensagem: {1}".Replace("{0}", message).Replace("{1}",e.Message));
-
             }
+            
         }
 
         public static void LOGGER_INF(String message)
         {
             try
-            {
+            {               
                 if (!EventLog.SourceExists("XML2RFAX"))
                 {
-                    EventLog.CreateEventSource("MySource", "MyNewLog");
+                    EventLog.CreateEventSource("XML2RFAX", "XML2RFAX");
                 }
+
                 EventLog.WriteEntry("XML2RFAX", message, EventLogEntryType.Information);
+                
             }
             catch(SecurityException e)
             {
                 Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "Erro ao tentar gravar evento {0} no event viewer, mensagem: {1}".Replace("{0}", message).Replace("{1}", e.Message));
-
             }
         }
 
@@ -91,14 +85,14 @@ namespace xml2rfax.br.com.ibm.util
             {
                 if (!EventLog.SourceExists("XML2RFAX"))
                 {
-                    EventLog.CreateEventSource("MySource", "MyNewLog");
+                    EventLog.CreateEventSource("XML2RFAX", "XML2RFAX");
                 }
+
                 EventLog.WriteEntry("XML2RFAX", message, EventLogEntryType.Warning);
             }
             catch(SecurityException e)
             {
                 Logger.LOGGER(MethodBase.GetCurrentMethod().DeclaringType.Name, "Erro ao tentar gravar evento {0} no event viewer, mensagem: {1}".Replace("{0}", message).Replace("{1}", e.Message));
-
             }
         }
 

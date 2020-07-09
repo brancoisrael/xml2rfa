@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using xml2rfax.br.com.ibm.job;
 using xml2rfax.br.com.ibm.service;
+using xml2rfax.br.com.ibm.util;
 
 namespace xml2rfax
 {
@@ -16,7 +17,7 @@ namespace xml2rfax
         /// </summary>
         static void Main()
         {
-
+            /*
             
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
@@ -25,8 +26,10 @@ namespace xml2rfax
             };
             ServiceBase.Run(ServicesToRun);
             
-            //JobFactory.getInstance().startJobs();
-           
+           */
+
+            JobFactory.getInstance().startJobs();
+
         }
     }
 }

@@ -39,7 +39,9 @@
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.ServiceName = "Service3";
+            this.serviceInstaller1.Description = "version 1.0.0 snapshot";
+            this.serviceInstaller1.DisplayName = "XML2RFAX";
+            this.serviceInstaller1.ServiceName = "XML2RFAX";
             // 
             // ProjectInstaller
             // 
