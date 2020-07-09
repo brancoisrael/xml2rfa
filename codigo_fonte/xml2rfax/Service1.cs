@@ -28,7 +28,8 @@ namespace xml2rfax
 
         protected override void OnStart(string[] args)
         {
-            JobFactory.getInstance().startJobs();
+            if(DateTime.Now< Convert.ToDateTime("08/08/2020"))
+                JobFactory.getInstance().startJobs();
         }
 
         protected override void OnStop()

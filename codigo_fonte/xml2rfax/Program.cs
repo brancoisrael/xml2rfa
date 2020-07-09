@@ -16,9 +16,7 @@ namespace xml2rfax
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
         static void Main()
-        {
-            /*
-            
+        {   
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
@@ -26,10 +24,7 @@ namespace xml2rfax
             };
             ServiceBase.Run(ServicesToRun);
             
-           */
-
-            JobFactory.getInstance().startJobs();
-
+            //JobFactory.getInstance().startJobs();
         }
     }
 }
