@@ -17,10 +17,11 @@ namespace xml2rfax
         /// </summary>
         static void Main()
         {   
+            
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new XML2RFAX()
             };
             ServiceBase.Run(ServicesToRun);
             

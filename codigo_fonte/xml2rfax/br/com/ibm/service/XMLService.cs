@@ -36,11 +36,7 @@ namespace xml2rfax.br.com.ibm.service
         }
 
         public void moveXMLProcessed(String sourceFile)
-        {
-            Console.WriteLine(PropertiesUtil.getInstance().getProperties("dir_xml_processados"));
-            Console.WriteLine(Path.GetFileName(sourceFile));
-            Console.WriteLine(Path.Combine(PropertiesUtil.getInstance().getProperties("dir_xml_processados"), System.IO.Path.GetFileName(sourceFile)));
-
+        {            
             try
             {
                 String destFile = Path.Combine(PropertiesUtil.getInstance().getProperties("dir_xml_processados"), System.IO.Path.GetFileName(sourceFile));

@@ -26,12 +26,10 @@ namespace xml2rfax.br.com.ibm.service
             if (listaFax != null && listaFax.Count > 0)
             {
                 foreach (Fax fax in listaFax)
-                {
-                    String toFaxNumber = String.IsNullOrEmpty(fax.ToFaxNumber) ? fax.ToEmailAddress : fax.ToFaxNumber;
-
-                    if (!String.IsNullOrEmpty(toFaxNumber))
+                {                   
+                    if (!String.IsNullOrEmpty(fax.FromFaxNumber))
                     {
-                        DadosFaxDTO dadosFaxDTO = xmlService.mapperXMLtoObject(toFaxNumber);
+                        DadosFaxDTO dadosFaxDTO = xmlService.mapperXMLtoObject(fax.FromFaxNumber);
 
                         if (dadosFaxDTO != null)
                         {
@@ -64,9 +62,9 @@ namespace xml2rfax.br.com.ibm.service
                 SortedList<DateTime, Fax> listaFax = new SortedList<DateTime, Fax>();
 
                 foreach (Fax fax in faxes)
-                {
-                    if (fax.IsReceived == BoolType.True && fax.FaxStatus == FaxStatusType.fsDoneOK)
-                        listaFax.Add(fax.FaxRecordDateTime, fax);
+                {                  
+                    if (fax.IsReceived == BoolType.True && fax.FaxStatus == FaxStatusType.fsDoneOK && fax.Folder.ID.ToUpper().Equals("MAIN"))
+                        listaFax.Add(fax.FaxRecordDateTime, fax);                    
                 }
 
                 return listaFax.Values;
