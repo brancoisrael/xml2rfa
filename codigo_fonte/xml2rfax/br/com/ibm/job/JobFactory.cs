@@ -10,15 +10,24 @@ using xml2rfax.br.com.ibm.util;
 
 namespace xml2rfax.br.com.ibm.job
 {
+    /// <summary>
+    /// Fabrica de jobs
+    /// </summary>
     public class JobFactory
     {
         private static JobFactory jobFactory;
         private IScheduler scheduler;
 
-
+        /// <summary>
+        /// construtor padrao
+        /// </summary>
         private JobFactory()
         { }
 
+        /// <summary>
+        /// Retorna instancia unica da classe
+        /// </summary>
+        /// <returns>JobFactory</returns>
         public static JobFactory getInstance()
         {
             if (jobFactory == null)
@@ -27,7 +36,10 @@ namespace xml2rfax.br.com.ibm.job
             return jobFactory;
         }
 
-
+        /// <summary>
+        /// Inicia execucao dos jobs para analise dos faxes recebidos
+        /// e analise do ciclo de vida dos arquivos XML nao processado
+        /// </summary>
         public void startJobs()
         {
             var properties = new NameValueCollection();
@@ -48,6 +60,9 @@ namespace xml2rfax.br.com.ibm.job
             scheduler.Start();           
         }
 
+        /// <summary>
+        /// Para a execucao dos jobs iniciado na rotina start jobs
+        /// </summary>
         public void stopJobs()
         {
             if(scheduler!=null)

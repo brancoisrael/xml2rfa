@@ -8,17 +8,27 @@ using xml2rfax.br.com.ibm.util;
 
 namespace xml2rfax.br.com.ibm.service
 {
+    /// <summary>
+    /// Classe de servico para fax 
+    /// </summary>
     public class FaxService
     {
         private UserService userService;
         private XMLService xmlService;
 
+        /// <summary>
+        /// Construtor padrao
+        /// </summary>
         public FaxService()
         {
             userService = new UserService();
             xmlService = new XMLService();
         }
 
+        /// <summary>
+        /// Metodo utilizado para mover faxes em da caixa postal default para
+        /// as caixas postais de destino configurada no arquivo XML
+        /// </summary>
         public void moveFaxes()
         {
             IList<Fax> listaFax = listarFaxesAsc();
@@ -50,6 +60,10 @@ namespace xml2rfax.br.com.ibm.service
             }
         }
 
+        /// <summary>
+        /// Metodo para listar os faxes ordenando do mais antigo ao mais recente
+        /// </summary>
+        /// <returns>IList</returns>
         private IList<Fax> listarFaxesAsc()
         {
             User user = userService.OrigemFaxBox;
@@ -72,7 +86,11 @@ namespace xml2rfax.br.com.ibm.service
             return null;
         }
 
-
+        /// <summary>
+        /// Metodo para rotear faxes para os usuarios de destino
+        /// </summary>
+        /// <param name="fax"></param>
+        /// <param name="dadosFaxDTO"></param>
         private void routToUser(Fax fax, DadosFaxDTO dadosFaxDTO)
         {
             if (Directory.Exists(PropertiesUtil.getInstance().getProperties("dir_xml_processados")))

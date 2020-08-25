@@ -4,11 +4,17 @@ using xml2rfax.br.com.ibm.util;
 
 namespace xml2rfax.br.com.ibm.service
 {
+    /// <summary>
+    /// Classe de servico para fax server
+    /// </summary>
     public class FaxServerService
     {
         private FaxServer faxServer;
         private static FaxServerService rfLoginService;
 
+        /// <summary>
+        /// Construtor padrao
+        /// </summary>
         private FaxServerService()
         {
             try
@@ -28,6 +34,10 @@ namespace xml2rfax.br.com.ibm.service
             }
         }
 
+        /// <summary>
+        /// Resgata instancia unica da classe FaxService
+        /// </summary>
+        /// <returns>FaxServer</returns>
         public static FaxServer getFaxServerIntance() {
             if (rfLoginService == null)
                 rfLoginService = new FaxServerService();
@@ -35,6 +45,10 @@ namespace xml2rfax.br.com.ibm.service
             return rfLoginService.getFaxServer();
         }
 
+        /// <summary>
+        /// Retorna instancia de fax server
+        /// </summary>
+        /// <returns>FaxServer</returns>
         private FaxServer getFaxServer() {
             return faxServer;
         }

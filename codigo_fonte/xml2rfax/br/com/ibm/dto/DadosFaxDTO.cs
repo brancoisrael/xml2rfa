@@ -7,6 +7,9 @@ using System.Xml.Serialization;
 
 namespace xml2rfax.br.com.ibm.dto
 {
+    /// <summary>
+    /// DadosFaxDTO
+    /// </summary>
     [XmlRoot("fax")]
     public class DadosFaxDTO
     {
@@ -28,6 +31,9 @@ namespace xml2rfax.br.com.ibm.dto
         [XmlElement("Comments")]
         private String _comments;
 
+        /// <summary>
+        /// Construtor padrao
+        /// </summary>
         public DadosFaxDTO()
         { 
         }
@@ -39,6 +45,10 @@ namespace xml2rfax.br.com.ibm.dto
         public string Comments { get => _comments; set => _comments = value; }
         public string Billinfo1 { get => _billinfo1; set => _billinfo1 = value; }
 
+        /// <summary>
+        /// Metodo para validar a estrutura do arquivo XML
+        /// </summary>
+        /// <returns>bool</returns>
         public bool validateFile() 
         {
             foreach (var item in this.GetType().GetProperties())

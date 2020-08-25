@@ -7,6 +7,9 @@ using System.Text;
 
 namespace xml2rfax.br.com.ibm.util
 {
+    /// <summary>
+    /// Classe para representacao do arquivo properties de configuraca
+    /// </summary>
     public class PropertiesUtil
     {
        
@@ -14,6 +17,9 @@ namespace xml2rfax.br.com.ibm.util
 
         private static PropertiesUtil propertiesUtil;
 
+        /// <summary>
+        /// Construtor padrao
+        /// </summary>
         private PropertiesUtil() {
            map = new Dictionary<string, string>();
 
@@ -22,6 +28,10 @@ namespace xml2rfax.br.com.ibm.util
             rightFaxInit();
         }
 
+        /// <summary>
+        /// Retorna instancia unica da classe
+        /// </summary>
+        /// <returns>PropertiesUtil</returns>
         public static PropertiesUtil getInstance() {
             try
             {
@@ -38,6 +48,11 @@ namespace xml2rfax.br.com.ibm.util
             return propertiesUtil;
         }
 
+        /// <summary>
+        /// Retorna valor da propriedade informada
+        /// </summary>
+        /// <param name="key">String</param>
+        /// <returns>String</returns>
         public String getProperties(String key)
         { 
             if (!map.TryGetValue(key, out String value))
@@ -48,6 +63,10 @@ namespace xml2rfax.br.com.ibm.util
             return value;
         }
 
+        /// <summary>
+        /// Metodo que resgata informacao da variavel de ambiente XML2RFAX,
+        /// efetua a leitura do arquivo 
+        /// </summary>
         private void xml2rfaxInit()
         {
             try
@@ -70,6 +89,10 @@ namespace xml2rfax.br.com.ibm.util
             }
         }
 
+        /// <summary>
+        /// Metodo para preencher a estrutura de dados com os valores configurados
+        /// no arquivo de inicializacao
+        /// </summary>
         private void rightFaxInit()
         {
             try

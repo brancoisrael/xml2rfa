@@ -7,11 +7,17 @@ using xml2rfax.br.com.ibm.util;
 
 namespace xml2rfax.br.com.ibm.service
 {
+    /// <summary>
+    /// Classe de servico para usuario
+    /// </summary>
     public class UserService
     {
         private IDictionary<String, User> mapUsers;
         private User origemFaxBox;
        
+        /// <summary>
+        /// Construtor padrao
+        /// </summary>
         public UserService() 
         {            
             Users users = FaxServerService.getFaxServerIntance().Users;
@@ -30,6 +36,11 @@ namespace xml2rfax.br.com.ibm.service
             
         }
         
+        /// <summary>
+        /// Busca usuario logado no sistema
+        /// </summary>
+        /// <param name="routingCode"></param>
+        /// <returns>User</returns>
         public User findUser(String routingCode) 
         {
             mapUsers.TryGetValue(routingCode, out User us);

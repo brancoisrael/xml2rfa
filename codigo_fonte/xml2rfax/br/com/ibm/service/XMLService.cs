@@ -8,8 +8,16 @@ using xml2rfax.br.com.ibm.util;
 
 namespace xml2rfax.br.com.ibm.service
 {
+    /// <summary>
+    /// Classe de servico para arquivos XML
+    /// </summary>
     public class XMLService
     {
+        /// <summary>
+        /// Conversor de string XML para objeto de fax
+        /// </summary>
+        /// <param name="nomeArquivo"></param>
+        /// <returns>DadosFaxDTO</returns>
         public DadosFaxDTO mapperXMLtoObject(String nomeArquivo) 
         {
             DadosFaxDTO dadosFaxDTO = null;
@@ -35,6 +43,10 @@ namespace xml2rfax.br.com.ibm.service
             return dadosFaxDTO;
         }
 
+        /// <summary>
+        /// Metodo para mover arquivos XML processados pela rotina
+        /// </summary>
+        /// <param name="sourceFile"></param>
         public void moveXMLProcessed(String sourceFile)
         {            
             try
@@ -51,7 +63,10 @@ namespace xml2rfax.br.com.ibm.service
         }
            
         
-
+        /// <summary>
+        /// Metodo para mover XML nao processado pela rotina com base no ciclo de vida
+        /// configurado para faxes nao processados
+        /// </summary>
         public void moveXMLDiscarded()
         {
             int faxAge = 0;
