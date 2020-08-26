@@ -21,17 +21,26 @@ namespace xml2rfax
 {
     public partial class XML2RFAX : ServiceBase
     {
+        /// <summary>
+        /// Construtor padrao
+        /// </summary>
         public XML2RFAX()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Inicia container de jobs
+        /// </summary>
+        /// <param name="args"></param>
         protected override void OnStart(string[] args)
         {
-            if(DateTime.Now< Convert.ToDateTime("08/08/2020"))
                 JobFactory.getInstance().startJobs();
         }
 
+        /// <summary>
+        /// Para container de jobs
+        /// </summary>
         protected override void OnStop()
         {
             JobFactory.getInstance().stopJobs();
